@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Epilogue', sans-serif;
+
+  background:#ECE9FD;
+
+  padding: 6.0rem 2.3rem 6.6rem;
+  font-size: 1.6rem;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+main {
+  max-width: 33.0rem;
+  margin: 0 auto;
+}
+
+div > p:first-child {
+  margin-bottom: 1.7rem;
+
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 3.2rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  color: #7158EF;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 4.0rem;
+  line-height: 4.8rem;
+
+  color: #090039;
+
+  margin-bottom: 1.5rem;
+}
+
+p {
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 3.2rem;
+
+  color: rgba(10, 0, 57, 0.64);
+
+  margin-bottom: 3.2rem;
+}
+
+a {
+  text-decoration: none;
+  color: #090039;
+ 
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 3.2rem;
+}
+
+a:hover {
+  font-weight: bold;
+}
+
+ul {
+  margin-top: 7.2rem;
+}
+
+ul li {
+  color: #090039;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+
+  display: flex;
+
+  gap: 2.6rem;
+
+  max-width: 25.7rem;
+}
+
+  ul li + li {
+    margin-top: 3.2rem;
+  }
+
+ul span {
+  font-weight: 800;
+  font-size: 7.2rem;
+  line-height: 8rem;
+
+  letter-spacing: -2px;
+}
+
+/* Media Queries*/
+@media (min-width: 40em) {/* No caso da página não precisa color o "R"em, somente o "em", pois usa-se o "rem" para textos*/
+  body {
+    padding: 8rem;
+  }
+
+  main {
+    display: flex;
+
+    max-width: 1020px;
+    gap: 10rem;
+  }
+  
+  main > div {
+    max-width: 48.4rem;
+  }
+
+  ul li {
+    display: flex;
+    max-width: 440px;
+    gap: 6.6rem
+  }
+
+
+
+}

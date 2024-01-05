@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+.page {
+  max-width: 144rem;
+  height: 102.4rem;
+}
+
+.fundo {
+  position: absolute;
+}
+
+.begin {
+  position: relative;
+  left: 16.7rem;
+  top: 22.6rem;
+  display: grid;
+  grid-template-columns: 22.2rem 22.2rem 22.2rem 22.2rem;  
+  grid-template-rows: 16.8rem 16.8rem 16.8rem;
+  
+  gap: 5.4rem;
+}
+
+.empt img {
+  position: absolute;
+}
+
+.empt img:hover {
+  opacity: 0;
+}
+
+.empt:hover {
+  animation: down-up 1.4s forwards;
+}
+
+.begin div:nth-child(3):hover, .empt:nth-child(3) :hover {
+  animation: none;
+  opacity: 1;
+}
+
+.begin div:nth-child(5):hover, .empt:nth-child(5) :hover {
+  animation: none;
+  opacity: 1;
+}
+
+.begin div:nth-child(12):hover, .empt:nth-child(12) :hover {
+  animation: none;
+  opacity: 1;
+}
+
+
+
+@keyframes down-up {
+  0% {
+    background-image: url(image/toupeira6.svg); 
+  }
+
+  10% {
+    background-image: url(image/toupeira6.svg); 
+  }
+
+  15% {
+    background-image: url(image/toupeira6.svg); 
+  }
+
+  20% {
+    background-image: url(image/toupeira1.svg);
+  }
+
+  25% {
+    background-image: url(image/toupeira1.svg);
+  }
+
+  30% {
+    background-image: url(image/toupeira1.svg);
+  }
+
+  35% {
+    background-image: url(image/toupeira2.svg);
+  }
+
+  40% {
+    background-image: url(image/toupeira2.svg);
+  }
+
+  45% {
+    background-image: url(image/toupeira2.svg);
+  }
+
+  50% {
+    background-image: url(image/toupeira3.svg);
+  }
+
+  55% {
+    background-image: url(image/toupeira3.svg);
+  }
+
+  60% {
+    background-image: url(image/toupeira3.svg);
+  }
+
+  65% {
+    background-image: url(image/toupeira4.svg);
+  }
+
+  70% {
+    background-image: url(image/toupeira4.svg);
+  }
+
+  75% {
+    background-image: url(image/toupeira4.svg);
+  }
+ 
+  80% {
+    background-image: url(image/toupeira5.svg);
+  }
+ 
+  85% {
+    background-image: url(image/toupeira5.svg);
+  }
+ 
+  90% {
+    background-image: url(image/toupeira5.svg);
+  }
+ 
+  95% {
+    background-image: url(image/toupeira6.svg);
+  }
+ 
+  100% {
+    background-image: url(image/toupeira6.svg);
+  }
+ 
+}

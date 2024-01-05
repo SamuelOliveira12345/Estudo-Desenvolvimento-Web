@@ -1,0 +1,274 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+  
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #BFD7E4;
+}
+
+body::before {
+  content: '';
+
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 465px;  
+  z-index: -1;
+
+  background: #293241;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 107px;
+}
+
+header h1 {
+  font-family: 'Staatliches', cursive;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 45px;
+
+  color: #FFFFFF;
+}
+
+header p {
+  width: 391px;
+  height: 46px;
+
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+
+  color: #FFFFFF;
+}
+
+.top {
+  display: flex;
+  
+  width: 750px;
+  height: 133px;
+  left: 1095px;
+  top: 465px;
+
+  background: #F67669;
+  border-radius: 20px 20px 0 0;  
+
+  margin-top: 32px;
+}
+
+.top legend, legend {
+  width: 200px;
+  margin: auto;
+  font-family: 'Staatliches', cursive;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 34px;
+
+  color: #FFFFFF;
+}
+
+form {
+  width: 750px;
+  
+  margin: auto;
+  
+  background: white;
+
+  border-radius: 0px 0px 20px 20px;
+
+  padding: 32px 64px;
+
+}
+
+/*Inserir o preenchimento em todas as entradas de dados utilizadas no form*/
+form input, 
+textarea,
+select {
+  padding: 10px;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  
+  padding: 32px, 64px, 64px;
+  margin-bottom: 32px;
+
+  border: 0;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-wrapper label,
+.checkbox-wrapper label {
+  font-size: 14px;
+  line-height: 24px;
+
+  color: #4E4958;
+}
+
+.input-wrapper label span {
+  font-size: 12px;
+  line-height: 20px;
+
+  color: #C1BCCC;
+}
+
+.input-wrapper input {
+  border: 1px solid #E6E6F0;
+  border-radius: 8px;
+
+  height: 55px;
+}
+
+.name-surname {
+  display: flex;
+  gap: 22px;
+  width: 100%;   
+}
+
+.name-surname input {
+  width: 300px;
+  margin-bottom: 16px;  
+}
+
+.fieldset-wrapper legend {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: #253B51;
+  
+  width: 622px;
+
+  padding-bottom: 8px;
+  margin-bottom: 32px;
+
+  border-bottom: 1px solid #E6E6F0;
+}
+
+.fieldset-wrapper select {
+  margin-bottom: 32px;
+
+  background: #FAFAFC;
+
+  border: 1px solid #E6E6F0;
+  border-radius: 8px;
+
+  width: 300px;
+  height: 56px;  
+}
+
+.fieldset-wrapper textarea {
+  background: #FAFAFC;
+
+  border: 1px solid #E6E6F0;
+
+  border-radius: 8px;
+
+  margin-bottom: 32px;
+
+  height: 167px;
+}
+
+.col-3  {
+  display: flex;
+  gap: 10px;
+}
+
+/*Selecionar e trabalhar no primeiro filho da div*/
+.col-3 > div:nth-child(1) {
+  width: 100%;
+}
+
+.buttons button {
+  margin: 64px 0 32px;
+  
+
+  background: #F67669;
+  border-radius: 8px;
+
+  width: 622px; 
+  height: 51px;
+
+  border: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 40px;
+
+  font-family: 'Staatliches', cursive;
+  font-size: 20px;
+  line-height: 26px;
+  color: white;
+}
+
+/*Alterar a cor do botão quando o mouse passar por cima*/
+.buttons button:hover {
+  background: #e66253;
+}
+
+/*Informar que o checkbox deverá ser posicionado relativo a essa div*/
+.checkbox-wrapper {
+  position: relative;
+}
+
+/*Posicionar o checkbox dentro da div "checkbox-wrapper"*/
+.checkbox-wrapper input{
+  position: absolute;
+
+  width: 24px;
+  height: 23.8px;
+
+  border-radius: 8px;
+
+  opacity: 0;
+
+}
+
+.checkbox-wrapper label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/*Inserir o checkbox antes do label*/
+.checkbox-wrapper label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 23.8px;
+
+  background: #FAFAFC;
+  border: 1px solid #E6E6F0;
+  border-radius: 8px;
+
+}
+
+/*Quando o checkbox for acionado deverá inserir a imagem com o ticket */
+.checkbox-wrapper input:checked + label::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='18' height='14' viewBox='0 0 18 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 11.17L1.83 7L0.410004 8.41L6 14L18 2L16.59 0.589996L6 11.17Z' fill='%2342D3FF'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/*Quando o checkbox estiver em foco deverá ficar com a borda na cor preta*/
+.checkbox-wrapper input:focus + label::before {
+  border: 2px solid black;
+}

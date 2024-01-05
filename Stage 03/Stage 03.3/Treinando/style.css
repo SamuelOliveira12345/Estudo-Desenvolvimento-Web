@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ff-text: 'Epilogue', sans-serif;
+  --fs-primary: clamp(4rem, 1rem + 5vw, 5.6rem);
+  --fs-secondary: 1.6rem;
+  --fc-primary: #BBB3E6;
+  --fc-secondary: #090039;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #28293E;
+
+  font-family: var(--ff-text);
+  font-size: var(--fs-secondary);
+}
+
+.page {
+  max-width: 32.9rem;
+
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+
+  margin-top: 10.6rem;
+}
+
+header p {
+  line-height: 3.2rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  color: var(--fc-primary);
+
+  margin-bottom: 1.7rem;
+
+  animation: leftright 1.5s;
+}
+
+header h1 {
+  font-size: var(--fs-primary);
+  
+  line-height: 4.8rem;
+  color: #ffffff;
+
+  animation: rightleft 700ms;
+}
+
+main {
+margin: 8rem 2.3rem 10.5rem;
+
+animation: downtop 700ms 350ms backwards;
+
+display: grid;
+gap: 3.2rem;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  
+  border-radius: 6px;
+}
+
+.card {
+  position: relative;
+}
+
+.card img{
+  height: 41.6rem;
+  object-fit: cover;
+  
+  transition: transform 300ms;
+}
+
+.card img:hover {
+  transform: scale(1.1);
+  opacity: 0.3;
+}
+
+.card h2 {
+  position: absolute;
+  bottom: 5.1rem;
+  left: 2.8rem;
+
+  font-size: var(--fs-primary);
+  line-height: 4.8rem;
+  color: #ffffff;
+}
+
+.card span {
+  display: flex;
+  margin-bottom: 2.3rem;
+
+  font-size: var(--fs-secondary);
+  font-weight: 400;
+  line-height: 3.2rem;
+  color: var(--fc-secondary);
+
+  background-color: #ffffff;
+
+  border-radius: 1.9rem;
+
+  width: fit-content;
+  padding: 0 1.6rem;
+}
+
+/*Animação Header p*/
+@keyframes leftright {
+  0% {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/*Animação header H1*/
+@keyframes rightleft {
+  0% {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/*Animação main*/
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 700px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .page {
+    max-width: 117rem;
+  }
+
+  header h1 {
+    font-size: var(--fs-primary);
+  }
+
+  main {
+    grid-template-areas: "A B B"
+    "C C D";
+  }
+
+  main div:nth-child(1) {
+    grid-area: A;
+  }
+  main div:nth-child(2) {
+    grid-area: B;
+  }
+  main div:nth-child(3) {
+    grid-area: C;
+  }
+  main div:nth-child(4) {
+    grid-area: D;
+  }
+
+}
+
