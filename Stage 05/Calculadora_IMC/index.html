@@ -7,41 +7,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculadora de IMC</title>
+
+  <!-- Style -->
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-  <script src="./script.js" defer></script>
+  <!-- Script -->
 </head>
 <body>
-  <header id="header" hidden>
+  <header id="error" hidden>
     <p>Digite somente números</p>
   </header>
  
   <main>
-    <div class="cardBegin">
-      <h1>Cálculo de IMC</h1>
+    <div class="card">
+      <h1 class="title">Cálculo de IMC</h1>
 
       <form >
-        <label for="inputWeight">Peso (kg)</label>
-        
-        <input type="number" name="Peso em kg" id="inputWeight" placeholder="90">
+        <div class="input-wrapper">
+          <label for="inputWeight">Peso (kg)</label>
+          
+          <input type="number" name="Peso em kg" id="inputWeight" placeholder="90">
+        </div>
 
-        <label for="inputHeight" class="inputHeight">Altura (m)</label>
+        <div class="input-wrapper">
+          <label for="inputHeight" class="inputHeight">Altura (m)</label>
+  
+          <input type="number" name="Altura em centimetros" id="inputHeight" placeholder="165">
+        </div>
 
-        <input type="number" name="Altura em centimetros" id="inputHeight" placeholder="165">
+        <button type="submit" id="btnCalculate">
+          Calcular IMC
+          
+          <img src="./images/arrow-up-right.svg" alt="Seta para direita">
+        </button>
       </form>
       
-      <button id="btnCalculate">
-        Calcular IMC
-        
-        <img src="./images/arrow-up-right.svg" alt="Seta para direita">
-      </button>
     </div>
 
-    <div id="result" class="cardResult hidden">
-      <h2>Seu IMC é de 28</h2>
+    <div class="modal-wrapper">
+      <div id="result" class="modal card ">
+        <button>
+          <img id="btnClose" src="./images/close.svg" alt="Letra X para fechar o cartão do resultado">
+        </button>
 
-      <img id="btnClose" src="./images/close.svg" alt="Letra X para fechar o cartão de resultado">
+        <h2 class="title">Seu IMC é de 28</h2>
+      
+      </div>
     </div>
   </main>
 </body>

@@ -1,7 +1,7 @@
 // Variáveis dos botões
 const btnCalculate = document.querySelector('#btnCalculate');
 const btnClose = document.querySelector('#btnClose');
-const error = document.querySelector('#header')
+const error = document.querySelector('#error')
 
 // Variavei
 const result = document.querySelector('#result');
