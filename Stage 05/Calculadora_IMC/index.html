@@ -13,9 +13,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Script -->
+  <script src="./js/script.js" type="module" defer></script>
 </head>
 <body>
-  <header id="error" hidden>
+  <header hidden id="error" >
     <p>Digite somente números</p>
   </header>
  
@@ -31,7 +32,7 @@
         </div>
 
         <div class="input-wrapper">
-          <label for="inputHeight" class="inputHeight">Altura (m)</label>
+          <label for="inputHeight" class="inputHeight">Altura (cm)</label>
   
           <input type="number" name="Altura em centimetros" id="inputHeight" placeholder="165">
         </div>
@@ -46,9 +47,9 @@
     </div>
 
     <div class="modal-wrapper">
-      <div id="result" class="modal card ">
-        <button>
-          <img id="btnClose" src="./images/close.svg" alt="Letra X para fechar o cartão do resultado">
+      <div id="result" class="modal card">
+        <button id="btnClose">
+          <img src="./images/close.svg" alt="Letra X para fechar o cartão do resultado">
         </button>
 
         <h2 class="title">Seu IMC é de 28</h2>

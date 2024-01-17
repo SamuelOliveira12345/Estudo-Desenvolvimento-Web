@@ -21,7 +21,7 @@
   --bg-input: #DCE2E9;
   --bd-input: rgba(73, 80, 87, 0.30);
   --bd-input-focus: #02799D;
-  ---txt-input-placeholder: rgba(73, 80, 87, 0.50);
+  --txt-input-placeholder: rgba(73, 80, 87, 0.50);
   --bg-button: #02799D;
   --txt-button: white;
   --bg-button-hover: #03617e;
@@ -40,7 +40,7 @@ body {
 }
 
 /*---Card-Error---*/
-header #error{
+#error{
   position: absolute;
   top: -4rem;
 
@@ -61,15 +61,16 @@ p {
   color: var(--txt-error);
 }
 
+/*--- Card ---*/
 .card {
   background: var(--bg-main);
-
+  
   padding: 4.8rem 6.4rem 6.4rem;
-
+  
   border-radius: .6rem;
 }
 
-/*---Card-Begin---*/
+/*--- Card-begin ---*/
 .title {
   font-size: 3.2rem;
   font-weight: bold;
@@ -81,7 +82,6 @@ form {
   display: flex;
   flex-direction: column;
   margin-top: 3.2rem;
-
 }
 
 /* Adicionando espaços no label do form */
@@ -165,6 +165,13 @@ form button:active {
 
   display: grid;
   place-content: center;
+
+  visibility: hidden;
+}
+
+.open {
+  visibility: visible;
+  
 }
 
 h2 {
