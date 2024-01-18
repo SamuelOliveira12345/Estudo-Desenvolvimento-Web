@@ -40,16 +40,23 @@ body {
 }
 
 /*---Card-Error---*/
-#error{
+.alertError{
   position: absolute;
-  top: -4rem;
-
+  top: 0;
   width: 100%;
+
   padding: .8rem;
   
   background-color: var(--bg-error);
 
-  animation: error 900ms;
+  visibility: hidden;
+
+  transform: translateY(-4rem);
+}
+
+.alertError.open {
+  transform: translateY(0rem);
+  transition-duration: .25s;
 }
 
 p {
@@ -171,7 +178,6 @@ form button:active {
 
 .open {
   visibility: visible;
-  
 }
 
 h2 {
@@ -196,16 +202,4 @@ h2 {
 
 .modal button:hover {
   transform: scale(1.1);
-}
-
-@keyframes error {
-  0%, 100% {
-    transform: translateY(0rem);
-    transition:ease-in;
-  }
-
-  40%, 80% {
-    transform: translateY(4rem);
-    transition-delay: 2s;
- }
 }

@@ -1,4 +1,7 @@
+// Importações dos scripts
 import { Modal } from "./modal.js";
+import { alertError } from "./alert-Error.js";
+import { imc, notNumber } from "./utils.js";
 
 // Variáveis
 const inputHeight = document.querySelector('#inputHeight');
@@ -17,15 +20,14 @@ form.onsubmit = event => {
   const showAlertError = notNumber(weight) || notNumber(height);
   
   if (showAlertError) {
-    error.removeAttribute('hidden');
-  
-    setTimeout(() => {
-    error.setAttribute('hidden', 'true');
-    }, 3000)
+    alertError.open();
+
     return
   }
   
-  Modal.open();
+  alertError.close(); // Fechar alerta
+  
+  Modal.open(); // Abrir modal
 
   Modal.wrapper.querySelector('h2').textContent = `Seu IMC é de ${result}`; // Alterar o texto de origem do h2
 };
@@ -38,10 +40,6 @@ Modal.btnClose.onclick = () => {
   inputHeight.value = ''; // Limpa o campo de altura
 }
 
-function imc (height, weight) {
-  return (weight / ((height/100) ** 2)).toFixed(2);
-};
-
-function notNumber (value) {
-  return isNaN(value) || value == "";
-}
+// Executar as funções quando começar a preencher o input
+inputHeight.oninput = () => alertError.close();
+inputWeight.oninput = () => alertError.close();
