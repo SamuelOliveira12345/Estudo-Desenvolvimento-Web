@@ -10,13 +10,16 @@
   <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-icon">
 
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <script type="module" src="./src/main.js" defer></script>
 </head>
 <body>
   <div id="app">
     <button id="toggle-mode">
-      <!-- <span>Ativar/Desativar Light Mode</span> -->
+      <span class="sr-only">Ativar Light Mode</span>
       <i class="ph-bold ph-sun"></i>
+
       <i class="ph-bold ph-moon"></i>
+
     </button>
     
     <section id="timer" class="flex">
@@ -26,12 +29,30 @@
     </section>
 
     <section id="controls" class="flex">
-      <button class="ph ph-play-circle"></button>
-      <button class="ph ph-pause-circle"></button>
-      <button class="ph ph-timer secondary"></button>
-      <button class="ph ph-stop-circle secondary"></button>
-      <button class="ph ph-speaker-simple-none secondary"></button>
-      <button class="ph ph-speaker-high"></button>
+      <button class="ph ph-play-circle">
+        <span class="sr-only">Inciar contador</span>
+      </button>
+
+      <button class="ph ph-pause-circle">
+        <span class="sr-only">Pausar contador</span>
+      </button>
+
+      <button class="ph ph-timer secondary">
+        <span class="sr-only">Ajustar contador</span>
+      </button>
+      
+      <button class="ph ph-stop-circle secondary">
+        <span class="sr-only">Reiniciar contador</span>
+      </button>
+
+      <button class="ph ph-speaker-simple-none secondary">
+        <span class="sr-only">Ligar som</span>
+      </button>
+
+      <button class="ph ph-speaker-high">
+        <span class="sr-only">Desligar som</span>
+      </button>
+
     </section>
   </div>
 </body>
