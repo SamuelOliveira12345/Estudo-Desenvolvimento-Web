@@ -1,4 +1,6 @@
-class Route {
+export class Router {
+  routes = {}
+  
   add(routeNames, page) {
     this.routes[routeNames] = page
   }
@@ -23,5 +25,3 @@ class Route {
   })
   }
 }
-
-const router = new Route()
