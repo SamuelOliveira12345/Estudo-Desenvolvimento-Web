@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  display: block;
+  position: absolute;
+  height: 100%;
+  background-image:url("mountains-universe-1.png");
+  background-repeat: no-repeat;
+  background-size: 90vw;
+}
+
+.container {
+  position: relative;
+  margin-top: 0;
+  height: fit-content;
+}
+
+nav {
+  margin: 4rem 0 0 7.2rem;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 3.2rem
+}
+
+nav ul a {
+ font-size: 1.6rem;
+
+ text-decoration: none;
+ color: white;
+}
+
+h1 {
+  color: white;
+}
