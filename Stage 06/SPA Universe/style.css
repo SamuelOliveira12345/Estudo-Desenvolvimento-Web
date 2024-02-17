@@ -6,40 +6,75 @@
 
 :root {
   font-size: 62.5%;
+
+  --bg-home: url(/assets/mountains-universe-1.png);
+  --bg-universe: url(/assets/mountains-universe-2.png);
+  --bg-exploration: url(/assets/mountains-universe-3.png);
+
 }
 
 body {
-  display: block;
-  position: absolute;
-  height: 100%;
-  background-image:url("mountains-universe-1.png");
-  background-repeat: no-repeat;
-  background-size: 90vw;
+  position: relative;
 }
 
-.container {
-  position: relative;
-  margin-top: 0;
-  height: fit-content;
+body, .home, .universe, .exploration {
+  width: 100vw;
+  height: 100vh;
+
+  font-family: "Roboto", sans-serif;
 }
 
 nav {
-  margin: 4rem 0 0 7.2rem;
+  position: absolute;
+  display: inline-flex;
+
+  margin: 4rem 7.2rem;
+  gap: 5rem;
+
+  background: none;
 }
 
-nav ul {
-  display: flex;
+nav a {
+  display: inline-flex;
   align-items: center;
-  gap: 3.2rem
-}
 
-nav ul a {
- font-size: 1.6rem;
-
- text-decoration: none;
- color: white;
-}
-
-h1 {
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 2.2rem;
+  text-decoration: none;
   color: white;
 }
+
+.home, .container, .exploration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  background-image: var(--bg-home);
+  background-position:bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(211, 211, 211, 0.5);
+
+  z-index: auto;  
+}
+
+.container {
+  display: grid;
+  background: none;
+}
+
+/* 
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+*/
