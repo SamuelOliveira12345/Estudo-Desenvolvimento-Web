@@ -31,11 +31,21 @@ export class Router {
   handle() {
     const { pathname } = window.location // com o uso do Destructuring estou buscando por "pathname" e salvando em uma variavel
     const route = this.routes[pathname] || this.routes[404]
-    this.navSelected()
-  
-   fetch(route)
-    .then(data => data.text())
-    .then(html => {
-      document.querySelector("#app").innerHTML = html
+
+    const navLinks = document.querySelectorAll('.nav-link');
+    Array.from(navLinks).forEach(link => {
+      if (link.pathname == pathname) {
+        link.classList.add('active-link');
+      } else {
+        link.classList.remove('active-link');
+      }
     })
+  
+    fetch(route)
+      .then(data => data.text())
+      .then(html => {
+        document.querySelector("#app").innerHTML = html
+      }
+    )
   }
+}
