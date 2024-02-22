@@ -62,7 +62,7 @@ header h1 {
 
 .search input {
   height: 3.2rem;
-  border: 2px solid #ccc;
+  border: 1px solid #ccc;
   border-radius: .4rem 0 0 .4rem;
   padding: 0 .8rem;
 }
@@ -84,8 +84,10 @@ header h1 {
 table {
   width: 100%;
   border-collapse: collapse;
-}
 
+  box-shadow: 0 1rem 2rem -1rem rgba(0, 0, 0, 0.3); /* o box-shadow insere a sombra no elemento, o primeiro valor é do eixo x, o segundo é no eixo y, o terceiro valor é a suavidade da sombra, o quarto valor é o espalhamento (quando o valor for negativo a sombra da uma sensação de espalhamento interno)*/
+} 
+  
 table * {
   font-size: 1.4rem;
   color: var(--text-color);
@@ -93,6 +95,44 @@ table * {
 
 table th {
   background: var(--primary-color);
+  text-align: left;
+  font-weight: normal;
+  padding: 1.5rem;
+}
+
+table th:first-child {
+  border-top-left-radius: .4rem;
+}
+
+table th:last-child {
+  border-top-right-radius: .4rem;
+}
+
+table tr:nth-child(even) {
+  background: #eee;
+} /*O "even" indica os pares*/
+
+table tr:nth-child(odd) {
+  background: #ddd;
+} /*O "odd" indica os impares*/
+
+table td {
+  padding: 1.5rem;
+  text-align: left;
+}
+
+td.user {
+  display: flex;
+  align-items: center;
+  gap: 1rem ;
+}
+
+td.user a{
+  text-decoration: none;
+}
+
+td.user a p {
+  font-weight: bold;
 }
 
 td.user img {
@@ -101,4 +141,11 @@ td.user img {
 
   object-fit: cover;
   border-radius: 50%;
+}
+
+td button {
+  background: none;
+  border: none;
+
+  color: red;
 }
