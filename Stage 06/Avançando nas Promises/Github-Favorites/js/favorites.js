@@ -6,22 +6,30 @@ export class Favorites{
   }
 
   load() {
-    this.entries = [
-      {
-        login: 'SamuelOliveira12345',
-        name: 'Samuel Oliveira',
-        public_repos: '76',
-        followers: '15087',
-      },
-      {
-        login: 'maykbrito',
-        name: 'Mayk Brito',
-        public_repos: '951',
-        followers: '1594875',
-      }
-    ]
+    this.entries = JSON.parse(localStorage.getItem('@github-favorities:')) || []
+    // O JSON.parse transforma uma string no seu dado de origem, ou seja, remove as aspas e deixa o restante do conteúdo.
+
+  
+    //{
+    //  login: 'SamuelOliveira12345',
+    //  name: 'Samuel Oliveira',
+    //  public_repos: '76',
+    //  followers: '15087',
+    //},
+    //{
+    //  login: 'maykbrito',
+    //  name: 'Mayk Brito',
+    //  public_repos: '951',
+    //  followers: '1594875',
+    //}
   }
   
+  delete(user) {
+    // higher-order functions
+    const filteredEntries = this.entries.filter( entry => entry.login !== user.login)
+
+
+  }
 }
 
 // Classe que vai criar a visualização e eventos do HTML
@@ -50,10 +58,16 @@ export class FavoritesView extends Favorites {
       row.querySelector('.repositories').textContent = user.public_repos
       row.querySelector('.followers').textContent = user.followers
 
-      
+      row.querySelector('.remove').onclick = () => {
+        const isTrue = confirm('Tem certeza que desejar remover essa linha?')
+
+        if(isTrue){
+          this.delete(user)
+        }
+      }
+
       this.tbody.append(row)
     }) 
-
   }
 
   createRow(){
@@ -74,14 +88,13 @@ export class FavoritesView extends Favorites {
         958
       </td>
       <td>
-        <button>&times;</button>
+        <button class='remove'>&times;</button>
       </td>
     `
     return tr
   }
   
   removeAllTr() {
-  
     this.tbody.querySelectorAll("tr")
       .forEach((tr) => {
         tr.remove()

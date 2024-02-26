@@ -148,4 +148,6 @@ td button {
   border: none;
 
   color: red;
+
+  cursor: pointer;
 }
