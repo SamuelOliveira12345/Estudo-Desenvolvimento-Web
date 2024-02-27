@@ -1,5 +1,29 @@
+// Consumo de API do Github
+export class GithubUser {
+  static search(username){
+    const endpoint = `https://api.github.com/users/${username}`
+
+    return fetch(endpoint)
+    .then(data => data.json())
+    .then(
+      ({
+        login, 
+        name, 
+        public_repos, 
+        followers
+      }) => 
+      ({
+        login,
+        name,
+        public_repos,
+        followers,
+      })
+    )
+  }
+}
+
 // Classe para a lógica dos dados, estruturando os dados
-export class Favorites{
+export class Favorites {
   constructor(root) {
     this.root = document.querySelector(root)
     this.load()
@@ -8,27 +32,20 @@ export class Favorites{
   load() {
     this.entries = JSON.parse(localStorage.getItem('@github-favorities:')) || []
     // O JSON.parse transforma uma string no seu dado de origem, ou seja, remove as aspas e deixa o restante do conteúdo.
-
-  
-    //{
-    //  login: 'SamuelOliveira12345',
-    //  name: 'Samuel Oliveira',
-    //  public_repos: '76',
-    //  followers: '15087',
-    //},
-    //{
-    //  login: 'maykbrito',
-    //  name: 'Mayk Brito',
-    //  public_repos: '951',
-    //  followers: '1594875',
-    //}
   }
-  
+
+  async add (username) {
+    const user = await GithubUser.search(username)
+
+    console.log(user)
+  }
+      
   delete(user) {
     // higher-order functions
     const filteredEntries = this.entries.filter( entry => entry.login !== user.login)
 
-
+    this.entries = filteredEntries
+    this.update()
   }
 }
 
@@ -41,6 +58,17 @@ export class FavoritesView extends Favorites {
 
 
     this.update()
+    this.onadd()
+  }
+
+  onadd () {
+    const addButton = this.root.querySelector('.search button')
+
+    addButton.onclick = () => {
+      const { value } = this.root.querySelector('.search input')
+
+      this.add(value)
+    }
   }
 
   update() {
