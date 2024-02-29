@@ -1,26 +1,4 @@
-// Consumo de API do Github
-export class GithubUser {
-  static search(username){
-    const endpoint = `https://api.github.com/users/${username}`
-
-    return fetch(endpoint)
-    .then(data => data.json())
-    .then(
-      ({
-        login, 
-        name, 
-        public_repos, 
-        followers
-      }) => 
-      ({
-        login,
-        name,
-        public_repos,
-        followers,
-      })
-    )
-  }
-}
+import { GithubUser } from "./GithubUser.js"
 
 // Classe para a lógica dos dados, estruturando os dados
 export class Favorites {
@@ -34,8 +12,21 @@ export class Favorites {
     // O JSON.parse transforma uma string no seu dado de origem, ou seja, remove as aspas e deixa o restante do conteúdo.
   }
 
+  save () {
+    localStorage.setItem('@github-favorities:', JSON.stringify(this.entries))
+  }
+
   async add (username) {
     try {
+
+      const userExists = this.entries.find(entry => entry.login == username)
+
+      console.log(userExists)
+
+      if(userExists) {
+        throw new Error('Usuário já cadastrado')
+      }
+
       const user = await GithubUser.search(username)
       
       if (user.login === undefined) {
@@ -44,6 +35,7 @@ export class Favorites {
 
       this.entries = [user, ...this.entries]
       this.update()
+      this.save()
 
     } 
     catch(error) {
@@ -57,6 +49,7 @@ export class Favorites {
 
     this.entries = filteredEntries
     this.update()
+    this.save()
   }
 }
 
