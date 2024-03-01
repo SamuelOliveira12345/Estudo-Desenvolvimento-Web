@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --bg-body: #000;
+  --bg-input: #06181C;
+  --bg-button: #065E7C;
+  --bg-thead: #092D38;
+  --bg-th-odd: rgba(6, 22, 27, 0.50);
+  --bg-th-even: #06181C;
+
+  --text-color-primary: #E1E1E6;
+  --text-color-placeholder: #7C7C8A;
+  --text-color-button-remove: #F75A68;
+  --text-color-button-input: #fff;
+}
+
+body {
+  height: 100vh;
+  font-size: 1.6rem;
+  color: var(--text-color-primary);
+  background-color: var(--bg-body);
+
+  margin: 11.5rem 16rem;
+  gap: 8.7rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+header {
+  display: flex;
+  align-items:flex-end;
+  justify-content: space-between;
+}
+
+header div {
+  display: inline-flex;
+  gap: .8rem;
+}
+
+input {
+  padding: 1.6rem;
+  background-color: var(--bg-input);
+  border: none;
+
+  width: 46rem;
+
+  border-radius: .5rem;
+}
+
+input::placeholder {
+  color: var(--text-color-placeholder);
+}
+
+button.onSearch {
+  display: flex;
+  align-items: center;
+  align-content:space-between;
+
+  padding: 1.2rem 3.2rem;
+  gap: .8rem;
+
+  color: var(--text-color-button-input);
+  background-color: var(--bg-button);
+
+  border: none;
+  border-radius: .5rem;
+} 
+
+button.onSearch:hover, .star svg:hover {
+  color: var(--bg-button);
+  background-color: var(--text-color-button-input);
+  fill: var(--bg-button);
+}
+
+/* table tr:nth-child(even) { */
+/* } */
