@@ -74,9 +74,15 @@ input {
   display: flex;
   align-items: center;
   align-self: stretch;
+
   padding: 1.6rem;
   width: var(--input-width);
+
+  color: var(--text-color-placeholder);
   background-color: var(--bg-input);
+
+  font-weight: 700;
+
   border: none;
   border-radius: .5rem;
 }
@@ -113,15 +119,24 @@ button.onSearch {
   cursor: pointer ;
 } 
 
+.onSearch:hover {
+  color: var(--bg-button);
+  background-color: var(--text-color-button-input);
+}
+
+.onSearch:active {
+  background-color: #e4e2e2;
+}
+
 table {
   color: var(--text-color-primary);
-  background-color: var(--bg-button);
+  background-color: var(--bg-body);
   width: 100%;
 
   border-collapse: collapse;
   border-radius: 1.2rem;
 
-  object-fit: cover;
+  overflow: hidden;
 } 
 
 table * {
@@ -139,16 +154,19 @@ table th {
   padding: 1.6rem 4rem;
 }
 
+table th:nth-child(2),
+table th:nth-child(3) {
+  width: 22rem;
+}
+
+table th:last-child {
+  width: 18rem;
+}
+
 table td {
+  margin: 0;
+
   padding: 2.4rem 2.4rem 2.4rem 4rem;
-}
-
-table td.user span {
-  font-weight: 400;
-}
-
-table td.user {
-  width: 50.4rem;
 }
 
 table button {
@@ -156,44 +174,35 @@ table button {
   border: none;
 
   color: var(--text-color-button-remove);
+
+  cursor: pointer;
 }
 
 table tbody tr:nth-child(odd) {
   background-color: var(--bg-th-odd); 
 }
 
+table tbody tr:nth-child(odd):hover {
+  background-color: rgba(20, 61, 71, 0.60);
+  transition:ease-in-out;
+}
+
 table tbody tr:nth-child(even) {
   background-color: var(--bg-th-even);    
 }
 
-table th:first-child {
-  border-top-left-radius: 1.2rem;
-}
-
-table th:last-child {
-  border-top-right-radius: 1.2rem;
-}
-
-table tr:last-child td:first-child {
-  border-bottom-left-radius: 1.2rem;
-}
-
-table tr:last-child td:last-child {
-  border-bottom-right-radius: 1.2rem;
+table tbody tr:nth-child(even):hover {
+  background-color: rgba(20, 61, 71, 0.60);    
+  transition:ease-in-out;
 }
 
 table .user {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  width: 100%;
 
   gap: 1.6rem;
-}
-
-table .user a {
-  text-align: left;
-  padding: 0;
-  margin: 0;
 }
 
 table .user img {
@@ -202,4 +211,17 @@ table .user img {
   object-fit: cover;
   border-radius: 50%;
   margin: 0;
+}
+
+table .user a {
+  text-align: left;
+  text-decoration: none;
+  color: var(--text-color-primary);
+
+  padding: 0;
+  margin: 0;
+}
+
+table .user a span {
+  font-weight: 400;
 }
