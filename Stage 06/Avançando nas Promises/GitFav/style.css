@@ -18,6 +18,8 @@
   --text-color-placeholder: #7C7C8A;
   --text-color-button-remove: #F75A68;
   --text-color-button-input: #fff;
+
+  --input-width: clamp(29.3rem, 20vw + 10rem, 46.2rem)
 }
 
 body {
@@ -25,14 +27,19 @@ body {
   font-size: 1.6rem;
   font-weight: bold;
 
+  margin: 0 10rem;
+
   color: var(--text-color-primary);
   background-color: var(--bg-body);
 }
 
 #app {
-  padding: 13rem 16rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   max-width: 112rem;
-  margin: 0 auto;
+  margin: 11.5rem auto;
 }
 
 .sr-only {
@@ -51,6 +58,11 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  width: 100%;
+
+  margin-bottom: 8.7rem;
+  /* gap: 30rem; */
 }
 
 header div {
@@ -63,7 +75,7 @@ input {
   align-items: center;
   align-self: stretch;
   padding: 1.6rem;
-  width: 100%;
+  width: var(--input-width);
   background-color: var(--bg-input);
   border: none;
   border-radius: .5rem;
@@ -103,12 +115,13 @@ button.onSearch {
 
 table {
   color: var(--text-color-primary);
-  background-color: var(--bg-thead);
-
+  background-color: var(--bg-button);
   width: 100%;
 
   border-collapse: collapse;
   border-radius: 1.2rem;
+
+  object-fit: cover;
 } 
 
 table * {
@@ -116,6 +129,10 @@ table * {
   text-align: left;
   max-width: 112rem;
   margin: 0 auto;
+}
+
+table thead {
+  background-color: var(--bg-thead);
 }
 
 table th {
@@ -130,6 +147,10 @@ table td.user span {
   font-weight: 400;
 }
 
+table td.user {
+  width: 50.4rem;
+}
+
 table button {
   background: none;
   border: none;
@@ -137,14 +158,42 @@ table button {
   color: var(--text-color-button-remove);
 }
 
+table tbody tr:nth-child(odd) {
+  background-color: var(--bg-th-odd); 
+}
+
+table tbody tr:nth-child(even) {
+  background-color: var(--bg-th-even);    
+}
+
+table th:first-child {
+  border-top-left-radius: 1.2rem;
+}
+
+table th:last-child {
+  border-top-right-radius: 1.2rem;
+}
+
+table tr:last-child td:first-child {
+  border-bottom-left-radius: 1.2rem;
+}
+
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 1.2rem;
+}
+
 table .user {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+
+  gap: 1.6rem;
 }
+
 table .user a {
   text-align: left;
   padding: 0;
+  margin: 0;
 }
 
 table .user img {
